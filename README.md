@@ -1,30 +1,34 @@
+# TrendNet TN9301 10GbE Linux Driver
 This repo Fork from Nazgul77/tn40xx-driver (thanks to nazgul77 and acooks). I use to make me easier to deploy on my project
 
-NIC: 
+## NIC: 
 TrendNet TN9310 10GbE SFP+ Ethernet Adapter (TEG-10GBS10) 
-H/W: V2.1R
+- H/W: V2.1R
 
-SFP+ Compatible:  
+## SFP+ Compatible:  
 Cisco-Subtel SFP-10G-LR
-FS SFP-10GLR-31
-Raisecom
-ADVA FTLX1471D3BCL-AD
+- FS SFP-10GLR-31
+- Raisecom
+- ADVA FTLX1471D3BCL-AD
 
-Known works on: 
-Proxmox VE 5.15.64-1-pve
-TrueNAS Scale 22.02.4
-Ubuntu Server 22.04.3
+## Known works on: 
+- Proxmox VE 5.15.64-1-pve
+- TrueNAS Scale 22.02.4
+- Ubuntu Server 22.04.3
 
-Quick Command for Installing Driver (no brainer)
+## Quick Command for Installing Driver (no brainer)
+```
 apt install git dkms
 git clone -b release/tn40xx-004 https://github.com/tasuke93/tn40xx-driver /usr/src/tn40xx-004
 dkms add -m tn40xx -v 004
 dkms install -m tn40xx -v 004
-
-Additional Command for PVE:
+```
+## Additional Command for PVE 5.15.64.1:
+```
 apt install pve-headers-5.15.64-1-pve
+```
 
-=======================================================================================================================================
+# Original Readme
 
 This repo contains the tn40xx Linux driver for 10Gbit NICs based on the TN4010 MAC from [Tehuti Networks](http://www.tehutinetworks.net).
 
